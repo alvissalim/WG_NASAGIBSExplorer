@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1309711A19E87A0900CEB7DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711919E87A0900CEB7DE /* Foundation.framework */; };
+		1309711C19E87A0900CEB7DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711B19E87A0900CEB7DE /* CoreGraphics.framework */; };
+		1309711E19E87A0900CEB7DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711D19E87A0900CEB7DE /* UIKit.framework */; };
+		1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1309712219E87A0900CEB7DE /* InfoPlist.strings */; };
+		1309712619E87A0900CEB7DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309712519E87A0900CEB7DE /* main.m */; };
+		1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309712919E87A0900CEB7DE /* TR1AppDelegate.m */; };
+		1309712D19E87A0900CEB7DE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1309712B19E87A0900CEB7DE /* Main_iPhone.storyboard */; };
+		1309713019E87A0900CEB7DE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1309712E19E87A0900CEB7DE /* Main_iPad.storyboard */; };
+		1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309713219E87A0900CEB7DE /* TR1ViewController.m */; };
+		1309713519E87A0900CEB7DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1309713419E87A0900CEB7DE /* Images.xcassets */; };
+		1309713C19E87A0900CEB7DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309713B19E87A0900CEB7DE /* XCTest.framework */; };
+		1309713D19E87A0900CEB7DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711919E87A0900CEB7DE /* Foundation.framework */; };
+		1309713E19E87A0900CEB7DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711D19E87A0900CEB7DE /* UIKit.framework */; };
+		1309714619E87A0900CEB7DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1309714419E87A0900CEB7DE /* InfoPlist.strings */; };
+		1309714819E87A0900CEB7DE /* NASAGIBSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309714719E87A0900CEB7DE /* NASAGIBSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1309713F19E87A0900CEB7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1309710E19E87A0900CEB7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1309711519E87A0900CEB7DE;
+			remoteInfo = NASAGIBS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1309711619E87A0900CEB7DE /* NASAGIBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAGIBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1309711919E87A0900CEB7DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1309711B19E87A0900CEB7DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1309711D19E87A0900CEB7DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1309712119E87A0900CEB7DE /* NASAGIBS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NASAGIBS-Info.plist"; sourceTree = "<group>"; };
+		1309712319E87A0900CEB7DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1309712519E87A0900CEB7DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1309712719E87A0900CEB7DE /* NASAGIBS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NASAGIBS-Prefix.pch"; sourceTree = "<group>"; };
+		1309712819E87A0900CEB7DE /* TR1AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TR1AppDelegate.h; sourceTree = "<group>"; };
+		1309712919E87A0900CEB7DE /* TR1AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TR1AppDelegate.m; sourceTree = "<group>"; };
+		1309712C19E87A0900CEB7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		1309712F19E87A0900CEB7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1309713119E87A0900CEB7DE /* TR1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TR1ViewController.h; sourceTree = "<group>"; };
+		1309713219E87A0900CEB7DE /* TR1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TR1ViewController.m; sourceTree = "<group>"; };
+		1309713419E87A0900CEB7DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1309713A19E87A0900CEB7DE /* NASAGIBSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAGIBSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1309713B19E87A0900CEB7DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1309714319E87A0900CEB7DE /* NASAGIBSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NASAGIBSTests-Info.plist"; sourceTree = "<group>"; };
+		1309714519E87A0900CEB7DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1309714719E87A0900CEB7DE /* NASAGIBSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NASAGIBSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1309711319E87A0900CEB7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309711C19E87A0900CEB7DE /* CoreGraphics.framework in Frameworks */,
+				1309711E19E87A0900CEB7DE /* UIKit.framework in Frameworks */,
+				1309711A19E87A0900CEB7DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1309713719E87A0900CEB7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309713C19E87A0900CEB7DE /* XCTest.framework in Frameworks */,
+				1309713E19E87A0900CEB7DE /* UIKit.framework in Frameworks */,
+				1309713D19E87A0900CEB7DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1309710D19E87A0900CEB7DE = {
+			isa = PBXGroup;
+			children = (
+				1309711F19E87A0900CEB7DE /* NASAGIBS */,
+				1309714119E87A0900CEB7DE /* NASAGIBSTests */,
+				1309711819E87A0900CEB7DE /* Frameworks */,
+				1309711719E87A0900CEB7DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1309711719E87A0900CEB7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1309711619E87A0900CEB7DE /* NASAGIBS.app */,
+				1309713A19E87A0900CEB7DE /* NASAGIBSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1309711819E87A0900CEB7DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1309711919E87A0900CEB7DE /* Foundation.framework */,
+				1309711B19E87A0900CEB7DE /* CoreGraphics.framework */,
+				1309711D19E87A0900CEB7DE /* UIKit.framework */,
+				1309713B19E87A0900CEB7DE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1309711F19E87A0900CEB7DE /* NASAGIBS */ = {
+			isa = PBXGroup;
+			children = (
+				1309712819E87A0900CEB7DE /* TR1AppDelegate.h */,
+				1309712919E87A0900CEB7DE /* TR1AppDelegate.m */,
+				1309712B19E87A0900CEB7DE /* Main_iPhone.storyboard */,
+				1309712E19E87A0900CEB7DE /* Main_iPad.storyboard */,
+				1309713119E87A0900CEB7DE /* TR1ViewController.h */,
+				1309713219E87A0900CEB7DE /* TR1ViewController.m */,
+				1309713419E87A0900CEB7DE /* Images.xcassets */,
+				1309712019E87A0900CEB7DE /* Supporting Files */,
+			);
+			path = NASAGIBS;
+			sourceTree = "<group>";
+		};
+		1309712019E87A0900CEB7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1309712119E87A0900CEB7DE /* NASAGIBS-Info.plist */,
+				1309712219E87A0900CEB7DE /* InfoPlist.strings */,
+				1309712519E87A0900CEB7DE /* main.m */,
+				1309712719E87A0900CEB7DE /* NASAGIBS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1309714119E87A0900CEB7DE /* NASAGIBSTests */ = {
+			isa = PBXGroup;
+			children = (
+				1309714719E87A0900CEB7DE /* NASAGIBSTests.m */,
+				1309714219E87A0900CEB7DE /* Supporting Files */,
+			);
+			path = NASAGIBSTests;
+			sourceTree = "<group>";
+		};
+		1309714219E87A0900CEB7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1309714319E87A0900CEB7DE /* NASAGIBSTests-Info.plist */,
+				1309714419E87A0900CEB7DE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1309711519E87A0900CEB7DE /* NASAGIBS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1309714B19E87A0900CEB7DE /* Build configuration list for PBXNativeTarget "NASAGIBS" */;
+			buildPhases = (
+				1309711219E87A0900CEB7DE /* Sources */,
+				1309711319E87A0900CEB7DE /* Frameworks */,
+				1309711419E87A0900CEB7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NASAGIBS;
+			productName = NASAGIBS;
+			productReference = 1309711619E87A0900CEB7DE /* NASAGIBS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1309713919E87A0900CEB7DE /* NASAGIBSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1309714E19E87A0900CEB7DE /* Build configuration list for PBXNativeTarget "NASAGIBSTests" */;
+			buildPhases = (
+				1309713619E87A0900CEB7DE /* Sources */,
+				1309713719E87A0900CEB7DE /* Frameworks */,
+				1309713819E87A0900CEB7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1309714019E87A0900CEB7DE /* PBXTargetDependency */,
+			);
+			name = NASAGIBSTests;
+			productName = NASAGIBSTests;
+			productReference = 1309713A19E87A0900CEB7DE /* NASAGIBSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1309710E19E87A0900CEB7DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TR1;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Alvis;
+				TargetAttributes = {
+					1309713919E87A0900CEB7DE = {
+						TestTargetID = 1309711519E87A0900CEB7DE;
+					};
+				};
+			};
+			buildConfigurationList = 1309711119E87A0900CEB7DE /* Build configuration list for PBXProject "NASAGIBS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1309710D19E87A0900CEB7DE;
+			productRefGroup = 1309711719E87A0900CEB7DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1309711519E87A0900CEB7DE /* NASAGIBS */,
+				1309713919E87A0900CEB7DE /* NASAGIBSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1309711419E87A0900CEB7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309713019E87A0900CEB7DE /* Main_iPad.storyboard in Resources */,
+				1309713519E87A0900CEB7DE /* Images.xcassets in Resources */,
+				1309712D19E87A0900CEB7DE /* Main_iPhone.storyboard in Resources */,
+				1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1309713819E87A0900CEB7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309714619E87A0900CEB7DE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1309711219E87A0900CEB7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */,
+				1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */,
+				1309712619E87A0900CEB7DE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1309713619E87A0900CEB7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1309714819E87A0900CEB7DE /* NASAGIBSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1309714019E87A0900CEB7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1309711519E87A0900CEB7DE /* NASAGIBS */;
+			targetProxy = 1309713F19E87A0900CEB7DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1309712219E87A0900CEB7DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1309712319E87A0900CEB7DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1309712B19E87A0900CEB7DE /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1309712C19E87A0900CEB7DE /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		1309712E19E87A0900CEB7DE /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1309712F19E87A0900CEB7DE /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		1309714419E87A0900CEB7DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1309714519E87A0900CEB7DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1309714919E87A0900CEB7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1309714A19E87A0900CEB7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1309714C19E87A0900CEB7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				INFOPLIST_FILE = "NASAGIBS/NASAGIBS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1309714D19E87A0900CEB7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				INFOPLIST_FILE = "NASAGIBS/NASAGIBS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1309714F19E87A0900CEB7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NASAGIBS.app/NASAGIBS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NASAGIBSTests/NASAGIBSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1309715019E87A0900CEB7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NASAGIBS.app/NASAGIBS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				INFOPLIST_FILE = "NASAGIBSTests/NASAGIBSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1309711119E87A0900CEB7DE /* Build configuration list for PBXProject "NASAGIBS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1309714919E87A0900CEB7DE /* Debug */,
+				1309714A19E87A0900CEB7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1309714B19E87A0900CEB7DE /* Build configuration list for PBXNativeTarget "NASAGIBS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1309714C19E87A0900CEB7DE /* Debug */,
+				1309714D19E87A0900CEB7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1309714E19E87A0900CEB7DE /* Build configuration list for PBXNativeTarget "NASAGIBSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1309714F19E87A0900CEB7DE /* Debug */,
+				1309715019E87A0900CEB7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1309710E19E87A0900CEB7DE /* Project object */;
+}
