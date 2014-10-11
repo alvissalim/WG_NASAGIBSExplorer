@@ -7,6 +7,7 @@
 //
 
 #import "GIBSREmoteTile.h"
+#import "QuakeParser.h"
 
 @implementation GIBSREmoteTile
 
