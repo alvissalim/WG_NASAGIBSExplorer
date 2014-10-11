@@ -22,6 +22,14 @@
 		1309713E19E87A0900CEB7DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711D19E87A0900CEB7DE /* UIKit.framework */; };
 		1309714619E87A0900CEB7DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1309714419E87A0900CEB7DE /* InfoPlist.strings */; };
 		1309714819E87A0900CEB7DE /* NASAGIBSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309714719E87A0900CEB7DE /* NASAGIBSTests.m */; };
+		1309715219E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715119E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework */; };
+		1309715419E87B1A00CEB7DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715319E87B1A00CEB7DE /* CoreLocation.framework */; };
+		1309715619E87B3600CEB7DE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715519E87B3600CEB7DE /* libc++.dylib */; };
+		1309715819E87B3E00CEB7DE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715719E87B3E00CEB7DE /* libz.dylib */; };
+		1309715A19E87B4700CEB7DE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715919E87B4700CEB7DE /* libxml2.dylib */; };
+		1309715C19E87B4D00CEB7DE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715B19E87B4D00CEB7DE /* libsqlite3.dylib */; };
+		1309715F19E8842300CEB7DE /* alcohol-shop-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */; };
+		1309716219E89D8900CEB7DE /* GIBSREmoteTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,15 @@
 		1309714319E87A0900CEB7DE /* NASAGIBSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NASAGIBSTests-Info.plist"; sourceTree = "<group>"; };
 		1309714519E87A0900CEB7DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1309714719E87A0900CEB7DE /* NASAGIBSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NASAGIBSTests.m; sourceTree = "<group>"; };
+		1309715119E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WhirlyGlobeMaplyComponent.framework; path = ../../WhirlyGlobeMaplyComponent.framework; sourceTree = "<group>"; };
+		1309715319E87B1A00CEB7DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1309715519E87B3600CEB7DE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1309715719E87B3E00CEB7DE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1309715919E87B4700CEB7DE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		1309715B19E87B4D00CEB7DE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alcohol-shop-24@2x.png"; path = "../../../resources/maki icons/alcohol-shop-24@2x.png"; sourceTree = "<group>"; };
+		1309716019E89D8900CEB7DE /* GIBSREmoteTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSREmoteTile.h; sourceTree = "<group>"; };
+		1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSREmoteTile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +79,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1309715C19E87B4D00CEB7DE /* libsqlite3.dylib in Frameworks */,
+				1309715A19E87B4700CEB7DE /* libxml2.dylib in Frameworks */,
+				1309715819E87B3E00CEB7DE /* libz.dylib in Frameworks */,
+				1309715619E87B3600CEB7DE /* libc++.dylib in Frameworks */,
+				1309715419E87B1A00CEB7DE /* CoreLocation.framework in Frameworks */,
+				1309715219E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework in Frameworks */,
 				1309711C19E87A0900CEB7DE /* CoreGraphics.framework in Frameworks */,
 				1309711E19E87A0900CEB7DE /* UIKit.framework in Frameworks */,
 				1309711A19E87A0900CEB7DE /* Foundation.framework in Frameworks */,
@@ -103,6 +126,12 @@
 		1309711819E87A0900CEB7DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1309715B19E87B4D00CEB7DE /* libsqlite3.dylib */,
+				1309715919E87B4700CEB7DE /* libxml2.dylib */,
+				1309715719E87B3E00CEB7DE /* libz.dylib */,
+				1309715519E87B3600CEB7DE /* libc++.dylib */,
+				1309715319E87B1A00CEB7DE /* CoreLocation.framework */,
+				1309715119E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework */,
 				1309711919E87A0900CEB7DE /* Foundation.framework */,
 				1309711B19E87A0900CEB7DE /* CoreGraphics.framework */,
 				1309711D19E87A0900CEB7DE /* UIKit.framework */,
@@ -114,6 +143,7 @@
 		1309711F19E87A0900CEB7DE /* NASAGIBS */ = {
 			isa = PBXGroup;
 			children = (
+				1309715D19E883F400CEB7DE /* image_assets */,
 				1309712819E87A0900CEB7DE /* TR1AppDelegate.h */,
 				1309712919E87A0900CEB7DE /* TR1AppDelegate.m */,
 				1309712B19E87A0900CEB7DE /* Main_iPhone.storyboard */,
@@ -122,6 +152,8 @@
 				1309713219E87A0900CEB7DE /* TR1ViewController.m */,
 				1309713419E87A0900CEB7DE /* Images.xcassets */,
 				1309712019E87A0900CEB7DE /* Supporting Files */,
+				1309716019E89D8900CEB7DE /* GIBSREmoteTile.h */,
+				1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */,
 			);
 			path = NASAGIBS;
 			sourceTree = "<group>";
@@ -153,6 +185,14 @@
 				1309714419E87A0900CEB7DE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1309715D19E883F400CEB7DE /* image_assets */ = {
+			isa = PBXGroup;
+			children = (
+				1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */,
+			);
+			name = image_assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +243,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Alvis;
 				TargetAttributes = {
+					1309711519E87A0900CEB7DE = {
+						DevelopmentTeam = 36H35Z74JJ;
+					};
 					1309713919E87A0900CEB7DE = {
 						TestTargetID = 1309711519E87A0900CEB7DE;
 					};
@@ -235,6 +278,7 @@
 				1309713019E87A0900CEB7DE /* Main_iPad.storyboard in Resources */,
 				1309713519E87A0900CEB7DE /* Images.xcassets in Resources */,
 				1309712D19E87A0900CEB7DE /* Main_iPhone.storyboard in Resources */,
+				1309715F19E8842300CEB7DE /* alcohol-shop-24@2x.png in Resources */,
 				1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +300,7 @@
 			files = (
 				1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */,
 				1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */,
+				1309716219E89D8900CEB7DE /* GIBSREmoteTile.m in Sources */,
 				1309712619E87A0900CEB7DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,10 +436,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/msaktialvissalim/Documents/FB,
+					Open,
+					Academy/WhirlyGlobe_Maply_Distribution_2_3,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"../../WhirlyGlobeMaplyComponent.framework/Headers\"",
+				);
 				INFOPLIST_FILE = "NASAGIBS/NASAGIBS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -404,10 +463,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/msaktialvissalim/Documents/FB,
+					Open,
+					Academy/WhirlyGlobe_Maply_Distribution_2_3,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"../../WhirlyGlobeMaplyComponent.framework/Headers\"",
+				);
 				INFOPLIST_FILE = "NASAGIBS/NASAGIBS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
