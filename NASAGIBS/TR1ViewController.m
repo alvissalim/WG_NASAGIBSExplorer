@@ -10,6 +10,7 @@
 #import "WhirlyGlobeComponent.h"
 #include "GIBSREmoteTile.h"
 #import "QuakeParser.h"
+#import "SettingViewController.h"
 
 @interface TR1ViewController ()
 
@@ -19,6 +20,26 @@
     WhirlyGlobeViewController *theViewC;
     MaplyQuadImageTilesLayer *aerialLayer;
     MaplyQuadImageTilesLayer *scienceLayer;
+    MaplyComponentObject *selectLabelObj;
+   
+    
+}
+
+- (void) globeViewController:(WhirlyGlobeViewController *)viewC didSelect:(NSObject *)selectedObj atLoc:(MaplyCoordinate)coord onScreen:(CGPoint)screenPt{
+    if (selectLabelObj){
+        [theViewC removeObject:selectLabelObj];
+        selectLabelObj = nil;
+    }
+    
+    if ([selectedObj isKindOfClass:[MaplyScreenMarker class]]){
+        MaplyScreenMarker *marker = (MaplyScreenMarker *) selectedObj;
+        NSString *title = (NSString *) marker.userObject;
+        
+        MaplyScreenLabel *label = [[MaplyScreenLabel alloc] init];
+        label.loc = coord;
+        label.text = title;
+        selectLabelObj = [theViewC addScreenLabels:@[label] desc:@{kMaplyFont: [UIFont systemFontOfSize:12.]}];
+    }
 }
 
 - (void)viewDidLoad
@@ -28,13 +49,24 @@
     [self.view addSubview:theViewC.view];
     theViewC.view.frame = self.view.bounds;
     [self addChildViewController:theViewC];
+    theViewC.delegate = self;
+    
+     NSMutableArray *tileSources = [NSMutableArray array];
+    
+    //SettingViewController viewController = [SettingViewController alloc];
+    
+    
     NSString *baseCacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
     NSString *aerialTilesCacheDir = [NSString stringWithFormat:@"%@/myTiles5/",baseCacheDir];
     int maxZoom = 18;
     
+    
+    
+    
     // OSM Data
     //GIBSREmoteTile *tileSource = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://otile1.mqcdn.com/tiles/1.0.0/sat/" ext:@"png" minZoom:0 maxZoom:maxZoom];
+    
     
     MaplyRemoteTileInfo *tileSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-01/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
@@ -60,7 +92,7 @@
     //tileSource.cacheDir = aerialTilesCacheDir;
     aerialLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
     
-    aerialLayer.animationPeriod = 10;
+    aerialLayer.animationPeriod =8;
     aerialLayer.imageDepth = 4;
     
     
@@ -70,7 +102,18 @@
     scienceLayer.flipY = YES;
     
     [theViewC addLayer:aerialLayer];
-    //[theViewC addLayer:scienceLayer];
+    [theViewC addLayer:scienceLayer];
+    
+
+    
+    switch (_option){
+        case EarthQuakeOption:
+            [self fetchEarthquake];
+            break;
+        case StadiumOption:
+            [self fetchCapabilities];
+            break;
+    }
     
     
     MaplyScreenMarker *marker = [[MaplyScreenMarker alloc] init];
@@ -94,9 +137,11 @@
     [theViewC animateToPosition:MaplyCoordinateMakeWithDegrees(-122.41667,37.7833) time:1.0];
 	// Do any additional setup after loading the view, typically from a nib.
     
+
+    
     //[self fetchCapabilities];
-    //[self fetchEarthquake];
-}
+    
+    }
 
 
 - (void)fetchEarthquake{
@@ -111,6 +156,10 @@
         
         //[theViewC addScreenMarkers:stadiums desc:nil];
         QuakeParser *quakeParser = [[QuakeParser alloc] initWithXMLData:data];
+        
+        
+        [theViewC addScreenMarkers:quakeParser.markers desc:nil];
+
     }];
 
 }

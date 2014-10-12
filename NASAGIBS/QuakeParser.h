@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WhirlyGlobeComponent.h"
 
 @interface QuakeParser : NSObject <NSXMLParserDelegate>
+
+@property NSMutableArray *markers;
 
 - (id) initWithXMLData:(NSData *) data;
 

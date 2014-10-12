@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WhirlyGlobeComponent.h"
+#import "SettingViewController.h"
 
-@interface TR1ViewController : UIViewController
+@interface TR1ViewController : UIViewController <WhirlyGlobeViewControllerDelegate>
+
+@property OptionType option;
 
 @end

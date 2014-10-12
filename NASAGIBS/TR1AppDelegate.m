@@ -7,11 +7,32 @@
 //
 
 #import "TR1AppDelegate.h"
+#import "TR1ViewController.h"
+#import "SettingViewController.h"
 
 @implementation TR1AppDelegate
 
+{
+    UINavigationController *navC;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //TR1ViewController *viewC = [[TR1ViewController alloc] init];
+    
+    SettingViewController *viewC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
+    
+    navC = [[UINavigationController alloc] initWithRootViewController:viewC];
+    
+    navC.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    self.window.rootViewController = navC;
+    
+    [self.window makeKeyAndVisible];
+    return YES;
+    
     // Override point for customization after application launch.
     return YES;
 }
