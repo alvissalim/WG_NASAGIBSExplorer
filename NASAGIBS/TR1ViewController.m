@@ -123,7 +123,6 @@
     aerialLayer.animationPeriod =8;
     aerialLayer.imageDepth = 1;
     
-    
     scienceLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:scienceLayerSource.coordSys tileSource:scienceLayerSource];
     
     aerialLayer.flipY = YES;
