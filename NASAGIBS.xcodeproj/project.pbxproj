@@ -33,6 +33,10 @@
 		1309716919E9D5AA00CEB7DE /* danger-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1309716819E9D5AA00CEB7DE /* danger-24@2x.png */; };
 		1309716D19E9E50200CEB7DE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716B19E9E50200CEB7DE /* SettingViewController.m */; };
 		1309716E19E9E50200CEB7DE /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1309716C19E9E50200CEB7DE /* SettingViewController.xib */; };
+		1309717119EA07D900CEB7DE /* GIBSCapabilityParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */; };
+		13114E361A0A17A8004F641A /* TR1Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E351A0A17A8004F641A /* TR1Layer.m */; };
+		13114E391A1601BB004F641A /* TR1LayerSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */; };
+		1360C3EE1A01D138001508EC /* Capabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1360C3ED1A01D138001508EC /* Capabilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,14 @@
 		1309716A19E9E50200CEB7DE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		1309716B19E9E50200CEB7DE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		1309716C19E9E50200CEB7DE /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		1309716F19EA07D900CEB7DE /* GIBSCapabilityParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSCapabilityParser.h; sourceTree = "<group>"; };
+		1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSCapabilityParser.m; sourceTree = "<group>"; };
+		13114E341A0A17A8004F641A /* TR1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TR1Layer.h; sourceTree = "<group>"; };
+		13114E351A0A17A8004F641A /* TR1Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TR1Layer.m; sourceTree = "<group>"; };
+		13114E371A1601BA004F641A /* TR1LayerSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TR1LayerSelectViewController.h; sourceTree = "<group>"; };
+		13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TR1LayerSelectViewController.m; sourceTree = "<group>"; };
+		1360C3EC1A01D138001508EC /* Capabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capabilities.h; sourceTree = "<group>"; };
+		1360C3ED1A01D138001508EC /* Capabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capabilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +173,14 @@
 				1309716019E89D8900CEB7DE /* GIBSREmoteTile.h */,
 				1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */,
 				1309716519E9AED100CEB7DE /* QuakeParser.h */,
+				1309716F19EA07D900CEB7DE /* GIBSCapabilityParser.h */,
+				13114E341A0A17A8004F641A /* TR1Layer.h */,
+				13114E351A0A17A8004F641A /* TR1Layer.m */,
+				1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */,
+				13114E371A1601BA004F641A /* TR1LayerSelectViewController.h */,
+				13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */,
+				1360C3EC1A01D138001508EC /* Capabilities.h */,
+				1360C3ED1A01D138001508EC /* Capabilities.m */,
 				1309716619E9AED100CEB7DE /* QuakeParser.m */,
 				1309716A19E9E50200CEB7DE /* SettingViewController.h */,
 				1309716B19E9E50200CEB7DE /* SettingViewController.m */,
@@ -313,8 +333,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */,
+				13114E361A0A17A8004F641A /* TR1Layer.m in Sources */,
+				1309717119EA07D900CEB7DE /* GIBSCapabilityParser.m in Sources */,
 				1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */,
+				1360C3EE1A01D138001508EC /* Capabilities.m in Sources */,
 				1309716719E9AED100CEB7DE /* QuakeParser.m in Sources */,
+				13114E391A1601BB004F641A /* TR1LayerSelectViewController.m in Sources */,
 				1309716219E89D8900CEB7DE /* GIBSREmoteTile.m in Sources */,
 				1309712619E87A0900CEB7DE /* main.m in Sources */,
 				1309716D19E9E50200CEB7DE /* SettingViewController.m in Sources */,
@@ -440,9 +464,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/msaktialvissalim/Documents/FB,
-					Open,
-					Academy/WhirlyGlobe_Maply_Distribution_2_3,
+					"\"/Users/msaktialvissalim/Documents/FB Open Academy/WhirlyGlobe_Maply_Distribution_2_3\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
@@ -467,9 +489,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/msaktialvissalim/Documents/FB,
-					Open,
-					Academy/WhirlyGlobe_Maply_Distribution_2_3,
+					"\"/Users/msaktialvissalim/Documents/FB Open Academy/WhirlyGlobe_Maply_Distribution_2_3\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NASAGIBS/NASAGIBS-Prefix.pch";
@@ -544,6 +564,7 @@
 				1309714D19E87A0900CEB7DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1309714E19E87A0900CEB7DE /* Build configuration list for PBXNativeTarget "NASAGIBSTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +573,7 @@
 				1309715019E87A0900CEB7DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

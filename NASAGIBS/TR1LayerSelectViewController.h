@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TR1Layer.h"
+#import "SettingViewController.h"
 
-@interface TR1LayerSelectViewController : UITableViewController
+
+@interface TR1LayerSelectViewController : UITableViewController <SelectionDelegate>
+- (void) runGlobe;
+
+@property TR1Layer *base;
+@property TR1Layer *overlay;
 
 @end

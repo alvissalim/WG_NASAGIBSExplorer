@@ -15,15 +15,52 @@
 
 @implementation SettingViewController
 
+GIBSCapabilityParser *capabilitiesParser;
+
+int numofLayers;
+
+int layerCount = 0;
+
+- (void) parseCapabilities{
+    NSString *urlStr = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/wmts.cgi?SERVICE=WMTS&request=GetCapabilities";
+    NSURLRequest *urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    [NSURLConnection sendAsynchronousRequest:urlReq
+     // the NSOperationQueue upon which the handler block will be dispatched:
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               capabilitiesParser = [[GIBSCapabilityParser alloc] initWithXMLData:data];
+                               
+                           }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self parseCapabilities];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveNewData:)
+                                                 name:@"layerAdd"
+                                               object:capabilitiesParser];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveNewData:(NSNotification *) notification{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView beginUpdates];
+        
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:layerCount inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
+        layerCount++;
+        [self.tableView endUpdates];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,13 +82,25 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 2;
+    
+    //[self fetchCapabilities];
+    
+    //numofLayers = capabilitiesParser.layerList.count;
+    
+    //[self.tableView reloadData];
+    
+    return layerCount;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell" ];
+
+    cell.textLabel.text = [[capabilitiesParser.layerList objectAtIndex:indexPath.row] name];
+    
+    
+    /*
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"Earthquakes";
@@ -61,7 +110,9 @@
             cell.textLabel.text = @"Stadium";
             break;
     }
+    */
     // Configure the cell...
+    
     
     return cell;
 }
@@ -111,15 +162,27 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    TR1Layer *itemToPassBack = [[capabilitiesParser layerList] objectAtIndex:indexPath.row];
+    [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack layerType:_selection];
+    
+    
+    [self.navigationController popViewControllerAnimated:TRUE];
+    
+    
+    /*
     // Navigation logic may go here, for example:
     // Create the next view controller.
     TR1ViewController *globeViewC = [[TR1ViewController alloc] init];
     
     globeViewC.option = indexPath.row;
+    
+    globeViewC.selectedLayer = [[capabilitiesParser layerList] objectAtIndex:indexPath.row];
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:globeViewC animated:YES];
+
+     */
 }
 
 

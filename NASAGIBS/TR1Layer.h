@@ -10,4 +10,9 @@
 
 @interface TR1Layer : NSObject
 
+@property NSString *name;
+@property NSString *timeRange;
+@property NSString *compatibility;
+@property NSString *format;
+
 @end

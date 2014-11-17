@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GIBSCapabilityParser : NSObject
+@interface GIBSCapabilityParser : NSObject <NSXMLParserDelegate>
+- (id) initWithXMLData:(NSData *) data;
+
+@property NSMutableArray *layerList;
 
 @end

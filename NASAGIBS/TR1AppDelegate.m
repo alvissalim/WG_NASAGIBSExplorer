@@ -9,23 +9,52 @@
 #import "TR1AppDelegate.h"
 #import "TR1ViewController.h"
 #import "SettingViewController.h"
+#import "TR1LayerSelectViewController.h"
 
 @implementation TR1AppDelegate
 
 {
     UINavigationController *navC;
+    
 }
+
+
+/*
+- (void)fetchCapabilities{
+    
+    NSString *urlStr = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/wmts.cgi?SERVICE=WMTS&request=GetCapabilities";
+    NSURLRequest *urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    NSURLResponse *urlResponse = [NSURLResponse alloc];
+    NSError *urlError = [NSError alloc];
+    NSData *data;
+
+    data = [NSURLConnection sendSynchronousRequest:urlReq returningResponse:&urlResponse error:&urlError];
+    
+    
+    capabilitiesParser = [[GIBSCapabilityParser alloc] initWithXMLData:data];
+    
+}
+ */
+     
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    //[self parseCapabilities];
+    
+    //NSLog(@"num of layers : %d", capabilitiesParser.layerList.count);
+    
     //TR1ViewController *viewC = [[TR1ViewController alloc] init];
     
     SettingViewController *viewC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
     
-    navC = [[UINavigationController alloc] initWithRootViewController:viewC];
+    
+    TR1LayerSelectViewController *mainView = [[TR1LayerSelectViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    navC = [[UINavigationController alloc] initWithRootViewController:mainView];
+    
     
     navC.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.window.rootViewController = navC;
@@ -63,5 +92,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 @end

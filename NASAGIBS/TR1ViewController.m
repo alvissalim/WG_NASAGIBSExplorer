@@ -11,6 +11,7 @@
 #include "GIBSREmoteTile.h"
 #import "QuakeParser.h"
 #import "SettingViewController.h"
+#import "GIBSCapabilityParser.h"
 
 @interface TR1ViewController ()
 
@@ -61,16 +62,43 @@
     NSString *aerialTilesCacheDir = [NSString stringWithFormat:@"%@/myTiles5/",baseCacheDir];
     int maxZoom = 18;
     
-    
-    
+
     
     // OSM Data
     //GIBSREmoteTile *tileSource = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://otile1.mqcdn.com/tiles/1.0.0/sat/" ext:@"png" minZoom:0 maxZoom:maxZoom];
     
     
-    MaplyRemoteTileInfo *tileSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-01/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
+    NSString *baseUrl = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/";
     
     
+    NSString *fullURL = [baseUrl stringByAppendingFormat:
+                         @"%@/default/2014-10-01/%@/", [_selectedLayer name], [_selectedLayer compatibility]];
+    
+    NSString *fullURLOverlay = [baseUrl stringByAppendingFormat:
+                         @"%@/default/2014-10-01/%@/", [_overlayLayer name], [_overlayLayer compatibility]];
+    
+
+    NSString *baseExt;
+    
+    if ([_selectedLayer.format isEqualToString:@"image/png"]) {
+        baseExt = @"png";
+    }
+    else if ([_selectedLayer.format isEqualToString:@"image/jpeg"]){
+        baseExt = @"jpg";
+    }
+    
+    NSString *overlayExt;
+    
+    if ([_overlayLayer.format isEqualToString:@"image/png"]) {
+        overlayExt = @"png";
+    }
+    else if ([_overlayLayer.format isEqualToString: @"image/jpeg"]){
+        overlayExt = @"jpg";
+    }
+    
+    MaplyRemoteTileInfo *tileSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:fullURL ext:baseExt minZoom:1 maxZoom:maxZoom];
+    
+
     MaplyRemoteTileInfo *tileSourceInfo2 = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-02/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
     
@@ -80,10 +108,10 @@
     MaplyRemoteTileInfo *tileSourceInfo4 = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-04/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
     
-    MaplyMultiplexTileSource *tileSource = [[MaplyMultiplexTileSource alloc] initWithSources:@[tileSourceInfo , tileSourceInfo2, tileSourceInfo3,tileSourceInfo4]];
+    MaplyMultiplexTileSource *tileSource = [[MaplyMultiplexTileSource alloc] initWithSources:@[tileSourceInfo]];
     
     
-    MaplyRemoteTileInfo *scienceLayerSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_Aerosol/default/2014-10-10/GoogleMapsCompatible_Level6/" ext:@"png" minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *scienceLayerSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:1 maxZoom:maxZoom];
     
     
     MaplyRemoteTileSource *scienceLayerSource = [[MaplyRemoteTileSource alloc] initWithInfo:scienceLayerSourceInfo];
@@ -93,7 +121,7 @@
     aerialLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
     
     aerialLayer.animationPeriod =8;
-    aerialLayer.imageDepth = 4;
+    aerialLayer.imageDepth = 1;
     
     
     scienceLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:scienceLayerSource.coordSys tileSource:scienceLayerSource];
@@ -111,7 +139,7 @@
             [self fetchEarthquake];
             break;
         case StadiumOption:
-            [self fetchCapabilities];
+            //[self fetchCapabilities];
             break;
     }
     
@@ -145,7 +173,7 @@
 
 
 - (void)fetchEarthquake{
-    NSString *urlStr = @"http://earthquake.usgs.gov/earthquakes/catalogs/7day-M2.5.xml";
+    NSString *urlStr = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/wmts.cgi?SERVICE=WMTS&request=GetCapabilities";
     NSURLRequest *urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
     
     [NSURLConnection sendAsynchronousRequest:urlReq queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -155,10 +183,11 @@
         //NSLog(@"feed = %@",feedsStr);
         
         //[theViewC addScreenMarkers:stadiums desc:nil];
-        QuakeParser *quakeParser = [[QuakeParser alloc] initWithXMLData:data];
+        //QuakeParser *quakeParser = [[QuakeParser alloc] initWithXMLData:data];
+        //GIBSCapabilityParser *quakeParser = [[GIBSCapabilityParser alloc] initWithXMLData:data];
         
         
-        [theViewC addScreenMarkers:quakeParser.markers desc:nil];
+        //[theViewC addScreenMarkers:quakeParser.markers desc:nil];
 
     }];
 

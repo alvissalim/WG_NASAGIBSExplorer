@@ -7,6 +7,8 @@
 //
 
 #import "TR1LayerSelectViewController.h"
+#import "SettingViewController.h"
+#import "TR1ViewController.h"
 
 @interface TR1LayerSelectViewController ()
 
@@ -23,9 +25,27 @@
     return self;
 }
 
+-(void) runGlobe{
+    TR1ViewController *globeViewC = [[TR1ViewController alloc] init];
+    
+    globeViewC.selectedLayer = _base;
+    globeViewC.overlayLayer = _overlay;
+    
+    // Pass the selected object to the new view controller.
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:globeViewC animated:YES];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStyleBordered target:self action:@selector(runGlobe)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -46,26 +66,72 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdenfier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdenfier];
+    
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdenfier];
+    }
+    
+    if(indexPath.row == 0){
+        cell.textLabel.text = @"Base Layer";
+    }
+    else
+    if(indexPath.row == 1){
+        cell.textLabel.text = @"Overlay Layer";
+    }
+    
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
+- (void)addItemViewController:(SettingViewController *)controller didFinishEnteringItem:(TR1Layer *)item layerType:(SelectionType)type
+{
+    switch (type) {
+        case BaseLayerSelection:
+            _base = item;
+            break;
+            
+        case OverlayLayerSelection:
+            _overlay = item;
+            break;
+    }
+}
+
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SettingViewController *selection = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
+    switch (indexPath.row) {
+        case 0:
+            selection.selection = BaseLayerSelection;
+            break;
+            
+        case 1:
+            selection.selection = OverlayLayerSelection;
+            break;
+    }
+    
+    selection.delegate = self;
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:selection animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

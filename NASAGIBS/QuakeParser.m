@@ -9,7 +9,6 @@
 #import "QuakeParser.h"
 
 
-
 @implementation QuakeParser
 {
     bool entryValid;
