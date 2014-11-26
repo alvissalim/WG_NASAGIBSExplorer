@@ -6,24 +6,29 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "TR1ViewController.h"
+#import "GIBSGlobeViewController.h"
 #import "WhirlyGlobeComponent.h"
-#include "GIBSREmoteTile.h"
+#include "GIBSRemoteTile.h"
 #import "QuakeParser.h"
-#import "SettingViewController.h"
+#import "GIBSLayersTableViewController.h"
 #import "GIBSCapabilityParser.h"
 
-@interface TR1ViewController ()
+@interface GIBSGlobeViewController ()
 
 @end
 
-@implementation TR1ViewController{
+@implementation GIBSGlobeViewController{
     WhirlyGlobeViewController *theViewC;
     MaplyQuadImageTilesLayer *aerialLayer;
     MaplyQuadImageTilesLayer *scienceLayer;
     MaplyComponentObject *selectLabelObj;
-   
-    
+    NSDate *startDate, *endDate, *selectedDate;
+    NSDate *beginningDate;
+    UISlider *slider;
+    UILabel *selectedDateLabel;
+    NSDateFormatter *formatter;
+    NSString *overlayExt;
+        NSString *baseExt;
 }
 
 - (void) globeViewController:(WhirlyGlobeViewController *)viewC didSelect:(NSObject *)selectedObj atLoc:(MaplyCoordinate)coord onScreen:(CGPoint)screenPt{
@@ -43,6 +48,43 @@
     }
 }
 
+- (IBAction)sliderReleased:(UISlider *)sender {
+    NSLog(@"slider value = %f", sender.value);
+    NSString *baseUrl = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/";
+    
+    NSString *fullURL = [baseUrl stringByAppendingFormat:
+                         @"%@/default/%@/%@/", [_selectedLayer name], selectedDateLabel.text,[_selectedLayer compatibility]];
+    
+    NSString *fullURLOverlay = [baseUrl stringByAppendingFormat:
+                                @"%@/default/%@/%@/", [_overlayLayer name], selectedDateLabel.text,[_overlayLayer compatibility]];
+    MaplyRemoteTileInfo *overlayLayerSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:1 maxZoom:18];
+    
+    MaplyRemoteTileSource *overlayLayerSource = [[MaplyRemoteTileSource alloc] initWithInfo:overlayLayerSourceInfo];
+    
+    MaplyRemoteTileInfo *baseLayerSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURL ext:baseExt minZoom:1 maxZoom:18];
+    
+    MaplyRemoteTileSource *baseLayerSource = [[MaplyRemoteTileSource alloc] initWithInfo:baseLayerSourceInfo];
+    
+    aerialLayer.tileSource = baseLayerSource;
+    scienceLayer.tileSource = overlayLayerSource;
+    
+}
+
+- (IBAction)sliderValueChanged:(id)sender
+{
+    // Create and initialize date component instance
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    
+    [dateComponents setDay:slider.value];
+    
+    // Retrieve date with increased days count
+    selectedDate = [[NSCalendar currentCalendar]
+                             dateByAddingComponents:dateComponents
+                             toDate:beginningDate options:0];
+    
+    selectedDateLabel.text =[formatter stringFromDate:selectedDate];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +93,102 @@
     theViewC.view.frame = self.view.bounds;
     [self addChildViewController:theViewC];
     theViewC.delegate = self;
+    
+    
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy'-'MM'-'dd"];
+    
+    CGRect screenRect = [self.view frame];
+    
+    CGFloat screenWidth;
+    CGFloat screenHeight;
+    
+    if (IS_PORTRAIT){
+        screenWidth = screenRect.size.width;
+        screenHeight = screenRect.size.height;
+    }
+    else{
+        screenWidth = screenRect.size.height;
+        screenHeight = screenRect.size.width;
+    }
+    // The above part doesn't work, don't know why
+    
+
+    slider = [[UISlider alloc] initWithFrame:CGRectMake(10,screenHeight - 50,screenWidth - 20,10)];
+    
+    slider.minimumValue = 0;
+    slider.maximumValue = 30;
+    slider.continuous = YES;
+    slider.value = 30;
+    
+    [slider addTarget:self action:@selector(sliderValueChanged:)forControlEvents:UIControlEventValueChanged];
+    
+    [slider addTarget:self action:@selector(sliderReleased:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [slider setBackgroundColor:[UIColor clearColor]];
+    
+    [self.view addSubview:slider];
+
+    
+    // Determine common start date and end date
+    
+    if ([_selectedLayer.startDate compare:_overlayLayer.startDate] == NSOrderedAscending){
+        startDate = _selectedLayer.startDate;
+    }
+    else{
+        startDate = _overlayLayer.startDate;
+    }
+    
+    if ([_selectedLayer.endDate compare:_overlayLayer.endDate] == NSOrderedDescending){
+        endDate = _selectedLayer.endDate;
+    }
+    else{
+        endDate = _overlayLayer.endDate;
+    }
+    
+    
+    // Create and initialize date component instance
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    
+    [dateComponents setDay:-30];
+    
+    // Retrieve date with increased days count
+    beginningDate = [[NSCalendar currentCalendar]
+                       dateByAddingComponents:dateComponents
+                       toDate:endDate options:0];
+    
+    
+
+    
+    UILabel *startDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,screenHeight - 30,100,20)];
+    
+    startDateLabel.text = [formatter stringFromDate:beginningDate];
+    startDateLabel.textColor = [UIColor orangeColor];
+
+    UILabel *endDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth - 100,screenHeight - 30,100,20)];
+    
+    endDateLabel.text = [formatter stringFromDate:endDate];
+    endDateLabel.textColor = [UIColor orangeColor];
+
+    selectedDate = endDate;
+    
+    selectedDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2. - 50, screenHeight - 80,100,20)];
+    
+    selectedDateLabel.text = [formatter stringFromDate:selectedDate];
+    selectedDateLabel.textColor = [UIColor orangeColor];
+
+    
+    
+    //[self.view addSubview:startDateLabel];
+    //[self.view addSubview:endDateLabel];
+    [self.view addSubview:selectedDateLabel];
+    
+    //GIBSTimeSliderViewController *sliderView = [[GIBSTimeSliderViewController alloc] init];
+    
+    //[self addChildViewController:sliderView];
+    //[self.view addSubview:sliderView.view];
+    //sliderView.view.frame = self.view.bounds;
+    
     
      NSMutableArray *tileSources = [NSMutableArray array];
     
@@ -72,13 +210,13 @@
     
     
     NSString *fullURL = [baseUrl stringByAppendingFormat:
-                         @"%@/default/2014-10-01/%@/", [_selectedLayer name], [_selectedLayer compatibility]];
+                         @"%@/default/%@/%@/", [_selectedLayer name], endDateLabel.text,[_selectedLayer compatibility]];
     
     NSString *fullURLOverlay = [baseUrl stringByAppendingFormat:
-                         @"%@/default/2014-10-01/%@/", [_overlayLayer name], [_overlayLayer compatibility]];
+                         @"%@/default/%@/%@/", [_overlayLayer name], endDateLabel.text,[_overlayLayer compatibility]];
     
 
-    NSString *baseExt;
+
     
     if ([_selectedLayer.format isEqualToString:@"image/png"]) {
         baseExt = @"png";
@@ -87,7 +225,7 @@
         baseExt = @"jpg";
     }
     
-    NSString *overlayExt;
+
     
     if ([_overlayLayer.format isEqualToString:@"image/png"]) {
         overlayExt = @"png";
@@ -96,22 +234,22 @@
         overlayExt = @"jpg";
     }
     
-    MaplyRemoteTileInfo *tileSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:fullURL ext:baseExt minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *tileSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURL ext:baseExt minZoom:1 maxZoom:maxZoom];
     
 
-    MaplyRemoteTileInfo *tileSourceInfo2 = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-02/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *tileSourceInfo2 = [[GIBSRemoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-02/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
     
-    MaplyRemoteTileInfo *tileSourceInfo3 = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-03/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *tileSourceInfo3 = [[GIBSRemoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-03/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
     
-    MaplyRemoteTileInfo *tileSourceInfo4 = [[GIBSREmoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-04/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *tileSourceInfo4 = [[GIBSRemoteTile alloc] initWithBaseURL:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2014-10-04/GoogleMapsCompatible_Level9/" ext:@"jpg" minZoom:1 maxZoom:maxZoom];
     
     
     MaplyMultiplexTileSource *tileSource = [[MaplyMultiplexTileSource alloc] initWithSources:@[tileSourceInfo]];
     
     
-    MaplyRemoteTileInfo *scienceLayerSourceInfo = [[GIBSREmoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:1 maxZoom:maxZoom];
+    MaplyRemoteTileInfo *scienceLayerSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:1 maxZoom:maxZoom];
     
     
     MaplyRemoteTileSource *scienceLayerSource = [[MaplyRemoteTileSource alloc] initWithInfo:scienceLayerSourceInfo];
@@ -166,6 +304,7 @@
     
 
     
+
     //[self fetchCapabilities];
     
     }

@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TR1Layer : NSObject
+@interface GIBSLayer : NSObject
 
 @property NSString *name;
 @property NSString *timeRange;
 @property NSString *compatibility;
 @property NSString *format;
-
+@property NSDate *startDate;
+@property NSDate *endDate;
 @end

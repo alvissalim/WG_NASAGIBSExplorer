@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TR1AppDelegate.h"
+#import "GIBSAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TR1AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([GIBSAppDelegate class]));
     }
 }

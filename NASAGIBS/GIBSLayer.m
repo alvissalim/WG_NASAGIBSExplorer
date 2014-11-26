@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "TR1Layer.h"
+#import "GIBSLayer.h"
 
-@implementation TR1Layer
+@implementation GIBSLayer
 
 
 @end

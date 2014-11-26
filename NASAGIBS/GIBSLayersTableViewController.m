@@ -6,20 +6,31 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "SettingViewController.h"
-#import "TR1ViewController.h"
+#import "GIBSLayersTableViewController.h"
+#import "GIBSGlobeViewController.h"
 
-@interface SettingViewController ()
+@interface GIBSLayersTableViewController ()
 
 @end
 
-@implementation SettingViewController
+@implementation GIBSLayersTableViewController
 
-GIBSCapabilityParser *capabilitiesParser;
+
 
 int numofLayers;
 
 int layerCount = 0;
+
+
+- (void) runParser{
+    [self parseCapabilities];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveNewData:)
+                                                 name:@"layerAdd"
+                                               object:_capabilitiesParser];
+    
+}
 
 - (void) parseCapabilities{
     NSString *urlStr = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/wmts.cgi?SERVICE=WMTS&request=GetCapabilities";
@@ -29,7 +40,7 @@ int layerCount = 0;
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                
-                               capabilitiesParser = [[GIBSCapabilityParser alloc] initWithXMLData:data];
+                               _capabilitiesParser = [[GIBSCapabilityParser alloc] initWithXMLData:data];
                                
                            }];
 }
@@ -38,13 +49,10 @@ int layerCount = 0;
 {
     [super viewDidLoad];
     
-    [self parseCapabilities];
+    if (_capabilitiesParser == NULL){
+        [self runParser];
+    }
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceiveNewData:)
-                                                 name:@"layerAdd"
-                                               object:capabilitiesParser];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -97,7 +105,7 @@ int layerCount = 0;
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell" ];
 
-    cell.textLabel.text = [[capabilitiesParser.layerList objectAtIndex:indexPath.row] name];
+    cell.textLabel.text = [[_capabilitiesParser.layerList objectAtIndex:indexPath.row] name];
     
     
     /*
@@ -162,7 +170,7 @@ int layerCount = 0;
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TR1Layer *itemToPassBack = [[capabilitiesParser layerList] objectAtIndex:indexPath.row];
+    GIBSLayer *itemToPassBack = [[_capabilitiesParser layerList] objectAtIndex:indexPath.row];
     [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack layerType:_selection];
     
     

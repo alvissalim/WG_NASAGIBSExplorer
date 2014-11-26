@@ -9,6 +9,6 @@
 #import "WhirlyGlobeComponent.h"
 
 
-@interface GIBSREmoteTile : MaplyRemoteTileInfo
+@interface GIBSRemoteTile : MaplyRemoteTileInfo
 
 @end

@@ -6,12 +6,12 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "TR1AppDelegate.h"
-#import "TR1ViewController.h"
-#import "SettingViewController.h"
-#import "TR1LayerSelectViewController.h"
+#import "GIBSAppDelegate.h"
+#import "GIBSGlobeViewController.h"
+#import "GIBSLayersTableViewController.h"
+#import "GIBSRootLayerSelectTableViewController.h"
 
-@implementation TR1AppDelegate
+@implementation GIBSAppDelegate
 
 {
     UINavigationController *navC;
@@ -48,10 +48,10 @@
     
     //TR1ViewController *viewC = [[TR1ViewController alloc] init];
     
-    SettingViewController *viewC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
+    GIBSLayersTableViewController *viewC = [[GIBSLayersTableViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
     
     
-    TR1LayerSelectViewController *mainView = [[TR1LayerSelectViewController alloc] initWithStyle:UITableViewStylePlain];
+    GIBSRootLayerSelectTableViewController *mainView = [[GIBSRootLayerSelectTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
     navC = [[UINavigationController alloc] initWithRootViewController:mainView];
     

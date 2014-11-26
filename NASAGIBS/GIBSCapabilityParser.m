@@ -7,7 +7,7 @@
 //
 
 #import "GIBSCapabilityParser.h"
-#import "TR1Layer.h"
+#import "GIBSLayer.h"
 
 @implementation GIBSCapabilityParser
 
@@ -24,6 +24,7 @@
     NSString *layerTileset;
     NSString *layerTimeRange;
     NSString *layerFormat;
+    NSDateFormatter *dateFormatter;
     
 }
 
@@ -37,15 +38,15 @@
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:data];
     xmlParser.delegate = self;
     [xmlParser parse];
-    
-    
    
     return self;
 }
 
 -(void) parserDidStartDocument:(NSXMLParser *)parser
 {
+    dateFormatter = [[NSDateFormatter alloc] init];
     
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
 }
 
 -(void) parserDidEndDocument:(NSXMLParser *)parser{
@@ -113,11 +114,17 @@
     if([elementName isEqualToString:@"Layer"]){
         if (layerValid && layerIdentifier && layerTimeRange && layerTileset && layerFormat){
             NSLog(@"Identifier = %@, ;tileSet = %@; timerange = %@", layerIdentifier,layerTileset, layerTimeRange);
-            TR1Layer *newLayer = [TR1Layer alloc];
+            GIBSLayer *newLayer = [GIBSLayer alloc];
             newLayer.name = layerIdentifier;
             newLayer.timeRange = layerTimeRange;
             newLayer.compatibility = layerTileset;
             newLayer.format = layerFormat;
+            
+            NSArray *dates = [layerTimeRange componentsSeparatedByString:@"/"];
+            // Parse dates
+            
+            newLayer.startDate = [dateFormatter dateFromString:[dates objectAtIndex:0]];
+            newLayer.endDate = [dateFormatter dateFromString:[dates objectAtIndex:1]];
             [_layerList addObject:newLayer];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"layerAdd" object:self];
         }

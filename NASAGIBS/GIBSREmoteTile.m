@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "GIBSREmoteTile.h"
+#import "GIBSRemoteTile.h"
 #import "QuakeParser.h"
 
-@implementation GIBSREmoteTile
+@implementation GIBSRemoteTile
 
 - (NSURLRequest *)requestForTile:(MaplyTileID)tileID
 

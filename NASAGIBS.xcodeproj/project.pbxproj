@@ -12,8 +12,8 @@
 		1309711E19E87A0900CEB7DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711D19E87A0900CEB7DE /* UIKit.framework */; };
 		1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1309712219E87A0900CEB7DE /* InfoPlist.strings */; };
 		1309712619E87A0900CEB7DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309712519E87A0900CEB7DE /* main.m */; };
-		1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309712919E87A0900CEB7DE /* TR1AppDelegate.m */; };
-		1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309713219E87A0900CEB7DE /* TR1ViewController.m */; };
+		1309712A19E87A0900CEB7DE /* GIBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309712919E87A0900CEB7DE /* GIBSAppDelegate.m */; };
+		1309713319E87A0900CEB7DE /* GIBSGlobeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309713219E87A0900CEB7DE /* GIBSGlobeViewController.m */; };
 		1309713519E87A0900CEB7DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1309713419E87A0900CEB7DE /* Images.xcassets */; };
 		1309713C19E87A0900CEB7DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309713B19E87A0900CEB7DE /* XCTest.framework */; };
 		1309713D19E87A0900CEB7DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309711919E87A0900CEB7DE /* Foundation.framework */; };
@@ -27,16 +27,15 @@
 		1309715A19E87B4700CEB7DE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715919E87B4700CEB7DE /* libxml2.dylib */; };
 		1309715C19E87B4D00CEB7DE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1309715B19E87B4D00CEB7DE /* libsqlite3.dylib */; };
 		1309715F19E8842300CEB7DE /* alcohol-shop-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */; };
-		1309716219E89D8900CEB7DE /* GIBSREmoteTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */; };
+		1309716219E89D8900CEB7DE /* GIBSRemoteTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716119E89D8900CEB7DE /* GIBSRemoteTile.m */; };
 		1309716419E9AC2800CEB7DE /* baseball-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1309716319E9AC2800CEB7DE /* baseball-24@2x.png */; };
-		1309716719E9AED100CEB7DE /* QuakeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716619E9AED100CEB7DE /* QuakeParser.m */; };
 		1309716919E9D5AA00CEB7DE /* danger-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1309716819E9D5AA00CEB7DE /* danger-24@2x.png */; };
-		1309716D19E9E50200CEB7DE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716B19E9E50200CEB7DE /* SettingViewController.m */; };
-		1309716E19E9E50200CEB7DE /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1309716C19E9E50200CEB7DE /* SettingViewController.xib */; };
+		1309716D19E9E50200CEB7DE /* GIBSLayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309716B19E9E50200CEB7DE /* GIBSLayersTableViewController.m */; };
+		1309716E19E9E50200CEB7DE /* GIBSLayersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1309716C19E9E50200CEB7DE /* GIBSLayersTableViewController.xib */; };
 		1309717119EA07D900CEB7DE /* GIBSCapabilityParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */; };
-		13114E361A0A17A8004F641A /* TR1Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E351A0A17A8004F641A /* TR1Layer.m */; };
-		13114E391A1601BB004F641A /* TR1LayerSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */; };
-		1360C3EE1A01D138001508EC /* Capabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1360C3ED1A01D138001508EC /* Capabilities.m */; };
+		13114E361A0A17A8004F641A /* GIBSLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E351A0A17A8004F641A /* GIBSLayer.m */; };
+		13114E391A1601BB004F641A /* GIBSRootLayerSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */; };
+		13114E3C1A1DAB13004F641A /* GIBSTimeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +57,10 @@
 		1309712319E87A0900CEB7DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1309712519E87A0900CEB7DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1309712719E87A0900CEB7DE /* NASAGIBS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NASAGIBS-Prefix.pch"; sourceTree = "<group>"; };
-		1309712819E87A0900CEB7DE /* TR1AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TR1AppDelegate.h; sourceTree = "<group>"; };
-		1309712919E87A0900CEB7DE /* TR1AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TR1AppDelegate.m; sourceTree = "<group>"; };
-		1309713119E87A0900CEB7DE /* TR1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TR1ViewController.h; sourceTree = "<group>"; };
-		1309713219E87A0900CEB7DE /* TR1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TR1ViewController.m; sourceTree = "<group>"; };
+		1309712819E87A0900CEB7DE /* GIBSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIBSAppDelegate.h; sourceTree = "<group>"; };
+		1309712919E87A0900CEB7DE /* GIBSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIBSAppDelegate.m; sourceTree = "<group>"; };
+		1309713119E87A0900CEB7DE /* GIBSGlobeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIBSGlobeViewController.h; sourceTree = "<group>"; };
+		1309713219E87A0900CEB7DE /* GIBSGlobeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIBSGlobeViewController.m; sourceTree = "<group>"; };
 		1309713419E87A0900CEB7DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1309713A19E87A0900CEB7DE /* NASAGIBSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAGIBSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1309713B19E87A0900CEB7DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -75,23 +74,21 @@
 		1309715919E87B4700CEB7DE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		1309715B19E87B4D00CEB7DE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alcohol-shop-24@2x.png"; path = "../../../resources/maki icons/alcohol-shop-24@2x.png"; sourceTree = "<group>"; };
-		1309716019E89D8900CEB7DE /* GIBSREmoteTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSREmoteTile.h; sourceTree = "<group>"; };
-		1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSREmoteTile.m; sourceTree = "<group>"; };
+		1309716019E89D8900CEB7DE /* GIBSRemoteTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSRemoteTile.h; sourceTree = "<group>"; };
+		1309716119E89D8900CEB7DE /* GIBSRemoteTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSRemoteTile.m; sourceTree = "<group>"; };
 		1309716319E9AC2800CEB7DE /* baseball-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baseball-24@2x.png"; path = "../../../resources/maki icons/baseball-24@2x.png"; sourceTree = "<group>"; };
-		1309716519E9AED100CEB7DE /* QuakeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuakeParser.h; sourceTree = "<group>"; };
-		1309716619E9AED100CEB7DE /* QuakeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuakeParser.m; sourceTree = "<group>"; };
 		1309716819E9D5AA00CEB7DE /* danger-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "danger-24@2x.png"; path = "../../../resources/maki icons/danger-24@2x.png"; sourceTree = "<group>"; };
-		1309716A19E9E50200CEB7DE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		1309716B19E9E50200CEB7DE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		1309716C19E9E50200CEB7DE /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		1309716A19E9E50200CEB7DE /* GIBSLayersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSLayersTableViewController.h; sourceTree = "<group>"; };
+		1309716B19E9E50200CEB7DE /* GIBSLayersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSLayersTableViewController.m; sourceTree = "<group>"; };
+		1309716C19E9E50200CEB7DE /* GIBSLayersTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIBSLayersTableViewController.xib; sourceTree = "<group>"; };
 		1309716F19EA07D900CEB7DE /* GIBSCapabilityParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSCapabilityParser.h; sourceTree = "<group>"; };
 		1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSCapabilityParser.m; sourceTree = "<group>"; };
-		13114E341A0A17A8004F641A /* TR1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TR1Layer.h; sourceTree = "<group>"; };
-		13114E351A0A17A8004F641A /* TR1Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TR1Layer.m; sourceTree = "<group>"; };
-		13114E371A1601BA004F641A /* TR1LayerSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TR1LayerSelectViewController.h; sourceTree = "<group>"; };
-		13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TR1LayerSelectViewController.m; sourceTree = "<group>"; };
-		1360C3EC1A01D138001508EC /* Capabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capabilities.h; sourceTree = "<group>"; };
-		1360C3ED1A01D138001508EC /* Capabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capabilities.m; sourceTree = "<group>"; };
+		13114E341A0A17A8004F641A /* GIBSLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSLayer.h; sourceTree = "<group>"; };
+		13114E351A0A17A8004F641A /* GIBSLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSLayer.m; sourceTree = "<group>"; };
+		13114E371A1601BA004F641A /* GIBSRootLayerSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSRootLayerSelectTableViewController.h; sourceTree = "<group>"; };
+		13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSRootLayerSelectTableViewController.m; sourceTree = "<group>"; };
+		13114E3A1A1DAB13004F641A /* GIBSTimeSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIBSTimeSliderViewController.h; path = ../GIBSTimeSliderViewController.h; sourceTree = "<group>"; };
+		13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIBSTimeSliderViewController.m; path = ../GIBSTimeSliderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,28 +160,26 @@
 		1309711F19E87A0900CEB7DE /* NASAGIBS */ = {
 			isa = PBXGroup;
 			children = (
+				13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */,
+				13114E3A1A1DAB13004F641A /* GIBSTimeSliderViewController.h */,
 				1309715D19E883F400CEB7DE /* image_assets */,
-				1309712819E87A0900CEB7DE /* TR1AppDelegate.h */,
-				1309712919E87A0900CEB7DE /* TR1AppDelegate.m */,
-				1309713119E87A0900CEB7DE /* TR1ViewController.h */,
-				1309713219E87A0900CEB7DE /* TR1ViewController.m */,
+				1309712819E87A0900CEB7DE /* GIBSAppDelegate.h */,
+				1309712919E87A0900CEB7DE /* GIBSAppDelegate.m */,
+				1309713119E87A0900CEB7DE /* GIBSGlobeViewController.h */,
+				1309713219E87A0900CEB7DE /* GIBSGlobeViewController.m */,
 				1309713419E87A0900CEB7DE /* Images.xcassets */,
 				1309712019E87A0900CEB7DE /* Supporting Files */,
-				1309716019E89D8900CEB7DE /* GIBSREmoteTile.h */,
-				1309716119E89D8900CEB7DE /* GIBSREmoteTile.m */,
-				1309716519E9AED100CEB7DE /* QuakeParser.h */,
-				1309716F19EA07D900CEB7DE /* GIBSCapabilityParser.h */,
-				13114E341A0A17A8004F641A /* TR1Layer.h */,
-				13114E351A0A17A8004F641A /* TR1Layer.m */,
+				1309716019E89D8900CEB7DE /* GIBSRemoteTile.h */,
+				1309716119E89D8900CEB7DE /* GIBSRemoteTile.m */,
+				13114E341A0A17A8004F641A /* GIBSLayer.h */,
+				13114E351A0A17A8004F641A /* GIBSLayer.m */,
 				1309717019EA07D900CEB7DE /* GIBSCapabilityParser.m */,
-				13114E371A1601BA004F641A /* TR1LayerSelectViewController.h */,
-				13114E381A1601BA004F641A /* TR1LayerSelectViewController.m */,
-				1360C3EC1A01D138001508EC /* Capabilities.h */,
-				1360C3ED1A01D138001508EC /* Capabilities.m */,
-				1309716619E9AED100CEB7DE /* QuakeParser.m */,
-				1309716A19E9E50200CEB7DE /* SettingViewController.h */,
-				1309716B19E9E50200CEB7DE /* SettingViewController.m */,
-				1309716C19E9E50200CEB7DE /* SettingViewController.xib */,
+				1309716F19EA07D900CEB7DE /* GIBSCapabilityParser.h */,
+				13114E371A1601BA004F641A /* GIBSRootLayerSelectTableViewController.h */,
+				13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */,
+				1309716A19E9E50200CEB7DE /* GIBSLayersTableViewController.h */,
+				1309716B19E9E50200CEB7DE /* GIBSLayersTableViewController.m */,
+				1309716C19E9E50200CEB7DE /* GIBSLayersTableViewController.xib */,
 			);
 			path = NASAGIBS;
 			sourceTree = "<group>";
@@ -313,7 +308,7 @@
 				1309716419E9AC2800CEB7DE /* baseball-24@2x.png in Resources */,
 				1309715F19E8842300CEB7DE /* alcohol-shop-24@2x.png in Resources */,
 				1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */,
-				1309716E19E9E50200CEB7DE /* SettingViewController.xib in Resources */,
+				1309716E19E9E50200CEB7DE /* GIBSLayersTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,16 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1309712A19E87A0900CEB7DE /* TR1AppDelegate.m in Sources */,
-				13114E361A0A17A8004F641A /* TR1Layer.m in Sources */,
+				1309712A19E87A0900CEB7DE /* GIBSAppDelegate.m in Sources */,
+				13114E361A0A17A8004F641A /* GIBSLayer.m in Sources */,
+				13114E3C1A1DAB13004F641A /* GIBSTimeSliderViewController.m in Sources */,
 				1309717119EA07D900CEB7DE /* GIBSCapabilityParser.m in Sources */,
-				1309713319E87A0900CEB7DE /* TR1ViewController.m in Sources */,
-				1360C3EE1A01D138001508EC /* Capabilities.m in Sources */,
-				1309716719E9AED100CEB7DE /* QuakeParser.m in Sources */,
-				13114E391A1601BB004F641A /* TR1LayerSelectViewController.m in Sources */,
-				1309716219E89D8900CEB7DE /* GIBSREmoteTile.m in Sources */,
+				1309713319E87A0900CEB7DE /* GIBSGlobeViewController.m in Sources */,
+				13114E391A1601BB004F641A /* GIBSRootLayerSelectTableViewController.m in Sources */,
+				1309716219E89D8900CEB7DE /* GIBSRemoteTile.m in Sources */,
 				1309712619E87A0900CEB7DE /* main.m in Sources */,
-				1309716D19E9E50200CEB7DE /* SettingViewController.m in Sources */,
+				1309716D19E9E50200CEB7DE /* GIBSLayersTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

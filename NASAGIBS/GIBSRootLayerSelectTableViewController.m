@@ -6,15 +6,17 @@
 //  Copyright (c) 2014年 Alvis. All rights reserved.
 //
 
-#import "TR1LayerSelectViewController.h"
-#import "SettingViewController.h"
-#import "TR1ViewController.h"
+#import "GIBSRootLayerSelectTableViewController.h"
+#import "GIBSLayersTableViewController.h"
+#import "GIBSGlobeViewController.h"
 
-@interface TR1LayerSelectViewController ()
+@interface GIBSRootLayerSelectTableViewController ()
 
 @end
 
-@implementation TR1LayerSelectViewController
+@implementation GIBSRootLayerSelectTableViewController
+
+GIBSLayersTableViewController *selection;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,15 +28,28 @@
 }
 
 -(void) runGlobe{
-    TR1ViewController *globeViewC = [[TR1ViewController alloc] init];
+    GIBSGlobeViewController *globeViewC = [[GIBSGlobeViewController alloc] init];
     
-    globeViewC.selectedLayer = _base;
-    globeViewC.overlayLayer = _overlay;
+    if (_base != NULL){
+        globeViewC.selectedLayer = _base;
+    }
+    else{
+        globeViewC.selectedLayer = [selection.capabilitiesParser.layerList objectAtIndex:10];
+    }
+    
+    if (_overlay != NULL){
+        globeViewC.overlayLayer = _overlay;
+    }
+    else{
+        globeViewC.overlayLayer = [selection.capabilitiesParser.layerList objectAtIndex:20];
+    }
+    
     
     // Pass the selected object to the new view controller.
-    
+    _overlay = [selection.capabilitiesParser.layerList objectAtIndex:1];
     // Push the view controller.
     [self.navigationController pushViewController:globeViewC animated:YES];
+    
 }
 
 
@@ -45,7 +60,10 @@
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStyleBordered target:self action:@selector(runGlobe)];
     self.navigationItem.rightBarButtonItem = doneButton;
     
+    selection = [[GIBSLayersTableViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
+    selection.delegate = self;
     
+    [selection runParser];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -100,7 +118,7 @@
     return cell;
 }
 
-- (void)addItemViewController:(SettingViewController *)controller didFinishEnteringItem:(TR1Layer *)item layerType:(SelectionType)type
+- (void)addItemViewController:(GIBSLayersTableViewController *)controller didFinishEnteringItem:(GIBSLayer *)item layerType:(SelectionType)type
 {
     switch (type) {
         case BaseLayerSelection:
@@ -115,7 +133,6 @@
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SettingViewController *selection = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:[NSBundle mainBundle]];
     switch (indexPath.row) {
         case 0:
             selection.selection = BaseLayerSelection;
@@ -125,8 +142,6 @@
             selection.selection = OverlayLayerSelection;
             break;
     }
-    
-    selection.delegate = self;
     
     // Push the view controller.
     [self.navigationController pushViewController:selection animated:YES];

@@ -13,21 +13,23 @@ typedef enum {EarthQuakeOption,StadiumOption} OptionType;
 
 typedef enum {BaseLayerSelection,OverlayLayerSelection} SelectionType;
 
-@class SettingViewController;
-@class TR1Layer;
+@class GIBSLayersTableViewController;
+@class GIBSLayer;
 
 @protocol SelectionDelegate <NSObject>
-- (void)addItemViewController:(SettingViewController *)controller didFinishEnteringItem:(TR1Layer *)item layerType:(SelectionType) type;
+- (void)addItemViewController:(GIBSLayersTableViewController *)controller didFinishEnteringItem:(GIBSLayer *)item layerType:(SelectionType) type;
 @end
 
 
-@interface SettingViewController : UITableViewController
+@interface GIBSLayersTableViewController : UITableViewController
 
 @property (nonatomic, weak) id <SelectionDelegate> delegate;
 
 @property OptionType optionType;
 @property SelectionType selection;
 
+@property GIBSCapabilityParser *capabilitiesParser;
 
 - (void)didReceiveNewData:(NSNotification *) notification;
+- (void) runParser;
 @end

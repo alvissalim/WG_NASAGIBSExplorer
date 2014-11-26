@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "GIBSCapabilityParser.h"
 
-@interface TR1AppDelegate : UIResponder <UIApplicationDelegate>
+@interface GIBSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 //- (void)fetchCapabilities;
 //- (void) parseCapabilities;
+
 @end
