@@ -10,11 +10,12 @@
 #import "GIBSLayer.h"
 #import "GIBSLayersTableViewController.h"
 #import "GIBSTimeSliderViewController.h"
+#import "GIBSLegendBuilder.h"
 
 @interface GIBSRootLayerSelectTableViewController : UITableViewController <SelectionDelegate>
 - (void) runGlobe;
 
 @property GIBSLayer *base;
 @property GIBSLayer *overlay;
-
+@property GIBSLegendBuilder *legend;
 @end

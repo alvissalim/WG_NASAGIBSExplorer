@@ -10,6 +10,7 @@
 #import "GIBSLayersTableViewController.h"
 #import "GIBSGlobeViewController.h"
 
+
 @interface GIBSRootLayerSelectTableViewController ()
 
 @end
@@ -127,6 +128,11 @@ GIBSLayersTableViewController *selection;
             
         case OverlayLayerSelection:
             _overlay = item;
+            
+            // Create Legends
+            _legend = [[GIBSLegendBuilder alloc] initWithLayerObject:_overlay];
+            
+            
             break;
     }
 }

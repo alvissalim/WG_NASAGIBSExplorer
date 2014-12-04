@@ -16,4 +16,8 @@
 @property NSString *format;
 @property NSDate *startDate;
 @property NSDate *endDate;
+@property NSString *metaDataUrl;
+@property NSString *unitName;
+@property NSString *minVal;
+@property NSString *maxVal;
 @end

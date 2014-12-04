@@ -11,6 +11,7 @@
 #import "GIBSLayersTableViewController.h"
 #import "GIBSLayer.h"
 #import "GIBSTimeSliderViewController.h"
+#import "GIBSLegendBuilder.h"
 
 #define IS_PORTRAIT     UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])
 #define IS_LANDSCAPE    UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
@@ -22,5 +23,6 @@
 
 @property GIBSLayer *selectedLayer;
 @property GIBSLayer *overlayLayer;
+@property UIImage *legendImage;
 
 @end

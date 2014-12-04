@@ -36,6 +36,7 @@
 		13114E361A0A17A8004F641A /* GIBSLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E351A0A17A8004F641A /* GIBSLayer.m */; };
 		13114E391A1601BB004F641A /* GIBSRootLayerSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */; };
 		13114E3C1A1DAB13004F641A /* GIBSTimeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */; };
+		1390B1831A2F44C2009FD0FE /* GIBSLegendBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1390B1821A2F44C2009FD0FE /* GIBSLegendBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSRootLayerSelectTableViewController.m; sourceTree = "<group>"; };
 		13114E3A1A1DAB13004F641A /* GIBSTimeSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIBSTimeSliderViewController.h; path = ../GIBSTimeSliderViewController.h; sourceTree = "<group>"; };
 		13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIBSTimeSliderViewController.m; path = ../GIBSTimeSliderViewController.m; sourceTree = "<group>"; };
+		1390B1811A2F44C2009FD0FE /* GIBSLegendBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSLegendBuilder.h; sourceTree = "<group>"; };
+		1390B1821A2F44C2009FD0FE /* GIBSLegendBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSLegendBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,13 +163,15 @@
 		1309711F19E87A0900CEB7DE /* NASAGIBS */ = {
 			isa = PBXGroup;
 			children = (
-				13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */,
 				13114E3A1A1DAB13004F641A /* GIBSTimeSliderViewController.h */,
+				13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */,
 				1309715D19E883F400CEB7DE /* image_assets */,
 				1309712819E87A0900CEB7DE /* GIBSAppDelegate.h */,
 				1309712919E87A0900CEB7DE /* GIBSAppDelegate.m */,
 				1309713119E87A0900CEB7DE /* GIBSGlobeViewController.h */,
 				1309713219E87A0900CEB7DE /* GIBSGlobeViewController.m */,
+				1390B1811A2F44C2009FD0FE /* GIBSLegendBuilder.h */,
+				1390B1821A2F44C2009FD0FE /* GIBSLegendBuilder.m */,
 				1309713419E87A0900CEB7DE /* Images.xcassets */,
 				1309712019E87A0900CEB7DE /* Supporting Files */,
 				1309716019E89D8900CEB7DE /* GIBSRemoteTile.h */,
@@ -330,6 +335,7 @@
 				1309712A19E87A0900CEB7DE /* GIBSAppDelegate.m in Sources */,
 				13114E361A0A17A8004F641A /* GIBSLayer.m in Sources */,
 				13114E3C1A1DAB13004F641A /* GIBSTimeSliderViewController.m in Sources */,
+				1390B1831A2F44C2009FD0FE /* GIBSLegendBuilder.m in Sources */,
 				1309717119EA07D900CEB7DE /* GIBSCapabilityParser.m in Sources */,
 				1309713319E87A0900CEB7DE /* GIBSGlobeViewController.m in Sources */,
 				13114E391A1601BB004F641A /* GIBSRootLayerSelectTableViewController.m in Sources */,

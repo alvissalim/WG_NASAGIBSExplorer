@@ -19,11 +19,13 @@
     bool timeValid;
     bool styleValid;
     bool formatValid;
+    bool metadaValid;
     
     NSString *layerIdentifier;
     NSString *layerTileset;
     NSString *layerTimeRange;
     NSString *layerFormat;
+    NSString *metaDataUrl;
     NSDateFormatter *dateFormatter;
     
 }
@@ -69,6 +71,7 @@
     else if (formatValid){
         layerFormat = string;
     }
+
 }
 
 
@@ -80,11 +83,13 @@
         tileSetValid = false;
         timeValid = false;
         formatValid = false;
+        metadaValid = false;
         
         layerIdentifier = nil;
         layerTileset = nil;
         layerTimeRange = nil;
         layerFormat = nil;
+        metaDataUrl = nil;
         
     }
     else if ([elementName isEqualToString:@"ows:Title"]  &&  styleValid == false){
@@ -104,7 +109,10 @@
     else if ([elementName isEqualToString:@"Format"]){
         formatValid = true;
     }
-    
+    else if ([elementName isEqualToString:@"ows:Metadata"]){
+        metadaValid = true;
+        metaDataUrl = [attributeDict objectForKey:@"xlink:href"];
+    }
 }
 
 
@@ -123,10 +131,18 @@
             NSArray *dates = [layerTimeRange componentsSeparatedByString:@"/"];
             // Parse dates
             
+            if (metadaValid){
+                newLayer.metaDataUrl = metaDataUrl;
+            }
+            else{
+                newLayer.metaDataUrl = nil;
+            }
+            
             newLayer.startDate = [dateFormatter dateFromString:[dates objectAtIndex:0]];
             newLayer.endDate = [dateFormatter dateFromString:[dates objectAtIndex:1]];
             [_layerList addObject:newLayer];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"layerAdd" object:self];
+            
         }
         layerValid = false;
     }

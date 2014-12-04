@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GIBSLayer.h"
 
-@interface GIBSLegendBuilder : NSObject
+@interface GIBSLegendBuilder : NSObject <NSXMLParserDelegate>
+- (id) initWithLayerObject:(GIBSLayer *) layer;
 
+@property NSMutableArray * colorMapArray;
+
++ (UIImage *) getImage;
++ (NSArray*) getInfo;
 @end

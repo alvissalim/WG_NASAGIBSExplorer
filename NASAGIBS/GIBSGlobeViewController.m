@@ -94,7 +94,8 @@
     [self addChildViewController:theViewC];
     theViewC.delegate = self;
     
-    
+
+
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy'-'MM'-'dd"];
     
@@ -128,7 +129,42 @@
     [slider setBackgroundColor:[UIColor clearColor]];
     
     [self.view addSubview:slider];
-
+    
+    CGRect rect = CGRectMake(10, 70, screenWidth - 20, 5);
+    
+    UIImageView * legendView = [[UIImageView alloc] initWithFrame:rect];
+    
+    [legendView setImage:[GIBSLegendBuilder getImage]];
+    
+    [self.view addSubview:legendView];
+    
+    UILabel *minValLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80 ,100,20)];
+    
+    if ([GIBSLegendBuilder getInfo] != nil){
+    minValLabel.text = [[GIBSLegendBuilder getInfo] objectAtIndex:0];
+    minValLabel.textColor = [UIColor orangeColor];
+    
+    [self.view addSubview:minValLabel];
+    
+    
+    UILabel *maxValLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth - 100, 80 ,100,20)];
+    
+    maxValLabel.textAlignment = NSTextAlignmentRight;
+    maxValLabel.text = [[GIBSLegendBuilder getInfo] objectAtIndex:1];
+    maxValLabel.textColor = [UIColor orangeColor];
+    
+    [self.view addSubview:maxValLabel];
+    
+    
+    
+    UILabel *unitLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2.0 - 20, 80 ,100,20)];
+    
+    
+    unitLabel.text = [[GIBSLegendBuilder getInfo] objectAtIndex:2];
+    unitLabel.textColor = [UIColor orangeColor];
+    
+    //[self.view addSubview:unitLabel];
+    }
     
     // Determine common start date and end date
     
@@ -216,6 +252,7 @@
                          @"%@/default/%@/%@/", [_overlayLayer name], endDateLabel.text,[_overlayLayer compatibility]];
     
 
+    
 
     
     if ([_selectedLayer.format isEqualToString:@"image/png"]) {
@@ -273,14 +310,14 @@
     
     switch (_option){
         case EarthQuakeOption:
-            [self fetchEarthquake];
+            //[self fetchEarthquake];
             break;
         case StadiumOption:
             //[self fetchCapabilities];
             break;
     }
     
-    
+    /*
     MaplyScreenMarker *marker = [[MaplyScreenMarker alloc] init];
     marker.loc = MaplyCoordinateMakeWithDegrees(-122.4166667, 37.783333);
     marker.image = [UIImage imageNamed:@"alcohol-shop-24@2x.png"];
@@ -299,10 +336,15 @@
     [theViewC addScreenMarkers:@[marker] desc:nil mode:MaplyThreadAny];
     //[theViewC addLayer:aerialLayer];
     //[theViewC setHeight:0.1];
+     */
     [theViewC animateToPosition:MaplyCoordinateMakeWithDegrees(-122.41667,37.7833) time:1.0];
 	// Do any additional setup after loading the view, typically from a nib.
     
 
+    
+    
+
+    
     
 
     //[self fetchCapabilities];
