@@ -140,7 +140,7 @@
     
     UILabel *minValLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80 ,100,20)];
     
-    if ([GIBSLegendBuilder getInfo] != nil){
+    if ([[GIBSLegendBuilder getInfo] count] > 0){
     minValLabel.text = [[GIBSLegendBuilder getInfo] objectAtIndex:0];
     minValLabel.textColor = [UIColor orangeColor];
     
@@ -233,7 +233,7 @@
     
     NSString *baseCacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
-    NSString *aerialTilesCacheDir = [NSString stringWithFormat:@"%@/myTiles5/",baseCacheDir];
+    NSString *aerialTilesCacheDir = [NSString stringWithFormat:@"%@/myTiles8/",baseCacheDir];
     int maxZoom = 18;
     
 
@@ -294,9 +294,6 @@
     
     //tileSource.cacheDir = aerialTilesCacheDir;
     aerialLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
-    
-    aerialLayer.animationPeriod =8;
-    aerialLayer.imageDepth = 1;
     
     scienceLayer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:scienceLayerSource.coordSys tileSource:scienceLayerSource];
     

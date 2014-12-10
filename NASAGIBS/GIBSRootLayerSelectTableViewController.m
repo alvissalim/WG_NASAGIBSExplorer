@@ -31,11 +31,13 @@ GIBSLayersTableViewController *selection;
 -(void) runGlobe{
     GIBSGlobeViewController *globeViewC = [[GIBSGlobeViewController alloc] init];
     
+    
     if (_base != NULL){
         globeViewC.selectedLayer = _base;
     }
     else{
         globeViewC.selectedLayer = [selection.capabilitiesParser.layerList objectAtIndex:10];
+        _base = globeViewC.selectedLayer;
     }
     
     if (_overlay != NULL){
@@ -43,11 +45,12 @@ GIBSLayersTableViewController *selection;
     }
     else{
         globeViewC.overlayLayer = [selection.capabilitiesParser.layerList objectAtIndex:20];
+        _overlay = globeViewC.overlayLayer;
     }
     
     
     // Pass the selected object to the new view controller.
-    _overlay = [selection.capabilitiesParser.layerList objectAtIndex:1];
+    //_overlay = [selection.capabilitiesParser.layerList objectAtIndex:1];
     // Push the view controller.
     [self.navigationController pushViewController:globeViewC animated:YES];
     

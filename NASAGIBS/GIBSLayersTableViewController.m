@@ -105,8 +105,9 @@ int layerCount = 0;
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell" ];
 
-    cell.textLabel.text = [[_capabilitiesParser.layerList objectAtIndex:indexPath.row] name];
-    
+    if (indexPath.row < [_capabilitiesParser.layerList count]){
+        cell.textLabel.text = [[_capabilitiesParser.layerList objectAtIndex:indexPath.row] name];
+    }
     
     /*
     switch (indexPath.row) {

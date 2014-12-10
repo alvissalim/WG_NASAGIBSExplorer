@@ -120,13 +120,18 @@
 {
     //NSLog(@"Element : %@",elementName);
     if([elementName isEqualToString:@"Layer"]){
-        if (layerValid && layerIdentifier && layerTimeRange && layerTileset && layerFormat){
+        if (layerValid && layerIdentifier && layerTileset && layerFormat){
             NSLog(@"Identifier = %@, ;tileSet = %@; timerange = %@", layerIdentifier,layerTileset, layerTimeRange);
             GIBSLayer *newLayer = [GIBSLayer alloc];
             newLayer.name = layerIdentifier;
-            newLayer.timeRange = layerTimeRange;
             newLayer.compatibility = layerTileset;
             newLayer.format = layerFormat;
+            
+            if (layerTimeRange == NULL){
+                layerTimeRange =  @"2002-06-01/2011-10-04/P1D"; // Some layer don't have time information (static)
+            }
+            
+            newLayer.timeRange = layerTimeRange;
             
             NSArray *dates = [layerTimeRange componentsSeparatedByString:@"/"];
             // Parse dates
