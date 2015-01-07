@@ -12,11 +12,12 @@
 #import "GIBSLayer.h"
 #import "GIBSTimeSliderViewController.h"
 #import "GIBSLegendBuilder.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define IS_PORTRAIT     UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])
 #define IS_LANDSCAPE    UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
 
-@interface GIBSGlobeViewController : UIViewController <WhirlyGlobeViewControllerDelegate>
+@interface GIBSGlobeViewController : UIViewController <WhirlyGlobeViewControllerDelegate,CLLocationManagerDelegate>
 
 @property OptionType option;
 

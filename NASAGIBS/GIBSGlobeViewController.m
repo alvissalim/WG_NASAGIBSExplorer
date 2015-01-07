@@ -29,6 +29,10 @@
     NSDateFormatter *formatter;
     NSString *overlayExt;
         NSString *baseExt;
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    CLLocation* location;
 }
 
 - (void) globeViewController:(WhirlyGlobeViewController *)viewC didSelect:(NSObject *)selectedObj atLoc:(MaplyCoordinate)coord onScreen:(CGPoint)screenPt{
@@ -57,7 +61,7 @@
     
     NSString *fullURLOverlay = [baseUrl stringByAppendingFormat:
                                 @"%@/default/%@/%@/", [_overlayLayer name], selectedDateLabel.text,[_overlayLayer compatibility]];
-    MaplyRemoteTileInfo *overlayLayerSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:1 maxZoom:18];
+    MaplyRemoteTileInfo *overlayLayerSourceInfo = [[GIBSRemoteTile alloc] initWithBaseURL:fullURLOverlay ext:overlayExt minZoom:0 maxZoom:20];
     
     MaplyRemoteTileSource *overlayLayerSource = [[MaplyRemoteTileSource alloc] initWithInfo:overlayLayerSourceInfo];
     
@@ -85,6 +89,16 @@
     selectedDateLabel.text =[formatter stringFromDate:selectedDate];
 }
 
+- (void) gotoCurrentLocation{
+    [theViewC animateToPosition:MaplyCoordinateMakeWithDegrees(location.coordinate.longitude,location.coordinate.latitude) time:2.0];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    location = [locations lastObject];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -95,6 +109,11 @@
     theViewC.delegate = self;
     
 
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
 
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy'-'MM'-'dd"];
@@ -121,6 +140,16 @@
     slider.maximumValue = 30;
     slider.continuous = YES;
     slider.value = 30;
+    
+    
+    UIButton * goHomeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *homeImage = [UIImage imageNamed:@"home.png"];
+    [goHomeButton setImage:homeImage forState:UIControlStateNormal];
+    [goHomeButton addTarget:self action:@selector(gotoCurrentLocation) forControlEvents:(UIControlEventTouchDown)];
+    
+    [goHomeButton setFrame:CGRectMake(screenWidth - 50, screenHeight - 130, 30, 30)];
+    
+    [self.view addSubview:goHomeButton];
     
     [slider addTarget:self action:@selector(sliderValueChanged:)forControlEvents:UIControlEventValueChanged];
     

@@ -37,6 +37,7 @@
 		13114E391A1601BB004F641A /* GIBSRootLayerSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E381A1601BA004F641A /* GIBSRootLayerSelectTableViewController.m */; };
 		13114E3C1A1DAB13004F641A /* GIBSTimeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */; };
 		1390B1831A2F44C2009FD0FE /* GIBSLegendBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1390B1821A2F44C2009FD0FE /* GIBSLegendBuilder.m */; };
+		1390B1851A5CF649009FD0FE /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 1390B1841A5CF649009FD0FE /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		13114E3B1A1DAB13004F641A /* GIBSTimeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIBSTimeSliderViewController.m; path = ../GIBSTimeSliderViewController.m; sourceTree = "<group>"; };
 		1390B1811A2F44C2009FD0FE /* GIBSLegendBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBSLegendBuilder.h; sourceTree = "<group>"; };
 		1390B1821A2F44C2009FD0FE /* GIBSLegendBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBSLegendBuilder.m; sourceTree = "<group>"; };
+		1390B1841A5CF649009FD0FE /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +101,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1309715419E87B1A00CEB7DE /* CoreLocation.framework in Frameworks */,
 				1309715C19E87B4D00CEB7DE /* libsqlite3.dylib in Frameworks */,
 				1309715A19E87B4700CEB7DE /* libxml2.dylib in Frameworks */,
 				1309715819E87B3E00CEB7DE /* libz.dylib in Frameworks */,
 				1309715619E87B3600CEB7DE /* libc++.dylib in Frameworks */,
-				1309715419E87B1A00CEB7DE /* CoreLocation.framework in Frameworks */,
 				1309715219E87AF900CEB7DE /* WhirlyGlobeMaplyComponent.framework in Frameworks */,
 				1309711C19E87A0900CEB7DE /* CoreGraphics.framework in Frameworks */,
 				1309711E19E87A0900CEB7DE /* UIKit.framework in Frameworks */,
@@ -221,6 +223,7 @@
 		1309715D19E883F400CEB7DE /* image_assets */ = {
 			isa = PBXGroup;
 			children = (
+				1390B1841A5CF649009FD0FE /* home.png */,
 				1309716819E9D5AA00CEB7DE /* danger-24@2x.png */,
 				1309716319E9AC2800CEB7DE /* baseball-24@2x.png */,
 				1309715E19E8842300CEB7DE /* alcohol-shop-24@2x.png */,
@@ -314,6 +317,7 @@
 				1309715F19E8842300CEB7DE /* alcohol-shop-24@2x.png in Resources */,
 				1309712419E87A0900CEB7DE /* InfoPlist.strings in Resources */,
 				1309716E19E9E50200CEB7DE /* GIBSLayersTableViewController.xib in Resources */,
+				1390B1851A5CF649009FD0FE /* home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
