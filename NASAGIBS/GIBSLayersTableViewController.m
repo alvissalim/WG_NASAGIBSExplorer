@@ -174,6 +174,7 @@ int layerCount = 0;
     GIBSLayer *itemToPassBack = [[_capabilitiesParser layerList] objectAtIndex:indexPath.row];
     [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack layerType:_selection];
     
+    int position = indexPath.row;
     
     [self.navigationController popViewControllerAnimated:TRUE];
     

@@ -36,7 +36,7 @@ GIBSLayersTableViewController *selection;
         globeViewC.selectedLayer = _base;
     }
     else{
-        globeViewC.selectedLayer = [selection.capabilitiesParser.layerList objectAtIndex:10];
+        globeViewC.selectedLayer = [selection.capabilitiesParser.layerList objectAtIndex:16];
         _base = globeViewC.selectedLayer;
     }
     
@@ -44,7 +44,7 @@ GIBSLayersTableViewController *selection;
         globeViewC.overlayLayer = _overlay;
     }
     else{
-        globeViewC.overlayLayer = [selection.capabilitiesParser.layerList objectAtIndex:20];
+        globeViewC.overlayLayer = [selection.capabilitiesParser.layerList objectAtIndex:19];
         _overlay = globeViewC.overlayLayer;
     }
     

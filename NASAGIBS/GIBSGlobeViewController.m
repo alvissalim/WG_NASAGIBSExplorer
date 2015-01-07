@@ -98,6 +98,17 @@
     location = [locations lastObject];
 }
 
+- (void) toggleOverlay
+{
+    static BOOL overlayState = true;
+    overlayState = !overlayState;
+    if (overlayState){
+        [theViewC addLayer:scienceLayer];
+    }
+    else{
+        [theViewC removeLayer:scienceLayer];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -114,7 +125,8 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
-
+    
+    
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy'-'MM'-'dd"];
     
@@ -141,6 +153,11 @@
     slider.continuous = YES;
     slider.value = 30;
     
+    UISwitch *overlaySwitchButton = [[UISwitch alloc] initWithFrame:CGRectMake(20,screenHeight - 120,20,20)];
+    [overlaySwitchButton addTarget:self action:@selector(toggleOverlay) forControlEvents:UIControlEventValueChanged];
+    [overlaySwitchButton setOn:true];
+    
+    [self.view addSubview:overlaySwitchButton];
     
     UIButton * goHomeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     UIImage *homeImage = [UIImage imageNamed:@"home.png"];
@@ -272,7 +289,6 @@
     
     
     NSString *baseUrl = @"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/";
-    
     
     NSString *fullURL = [baseUrl stringByAppendingFormat:
                          @"%@/default/%@/%@/", [_selectedLayer name], endDateLabel.text,[_selectedLayer compatibility]];
