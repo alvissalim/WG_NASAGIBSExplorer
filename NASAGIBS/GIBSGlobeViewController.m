@@ -25,6 +25,7 @@
     NSDate *startDate, *endDate, *selectedDate;
     NSDate *beginningDate;
     UISlider *slider;
+    UISwitch *overlaySwitchButton;
     UILabel *selectedDateLabel;
     NSDateFormatter *formatter;
     NSString *overlayExt;
@@ -102,7 +103,8 @@
 {
     static BOOL overlayState = true;
     overlayState = !overlayState;
-    if (overlayState){
+    
+    if (overlaySwitchButton.isOn){
         [theViewC addLayer:scienceLayer];
     }
     else{
@@ -153,7 +155,7 @@
     slider.continuous = YES;
     slider.value = 30;
     
-    UISwitch *overlaySwitchButton = [[UISwitch alloc] initWithFrame:CGRectMake(20,screenHeight - 120,20,20)];
+    overlaySwitchButton = [[UISwitch alloc] initWithFrame:CGRectMake(20,screenHeight - 120,20,20)];
     [overlaySwitchButton addTarget:self action:@selector(toggleOverlay) forControlEvents:UIControlEventValueChanged];
     [overlaySwitchButton setOn:true];
     
@@ -348,7 +350,6 @@
     [theViewC addLayer:aerialLayer];
     [theViewC addLayer:scienceLayer];
     
-
     
     switch (_option){
         case EarthQuakeOption:
