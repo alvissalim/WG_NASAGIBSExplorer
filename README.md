@@ -16,11 +16,15 @@ The list of available imageries are obtained directly from the GIBS server, ther
 User can select two imagery layers (base and overlay) and view them on a 3D Globe. 
 ### Time Selection
 User can also select imageries from any specific time within the past 30-days of the most recent imagery.
-### 
 
-## Requirement
+## Building NASA GIBS Explorer
+To build the code, you will require:
+- Xcode 6.1
+- WhirlyGlobe-Maply 2.3 ([Build Instruction](http://mousebird.github.io/WhirlyGlobe/tutorial/building_from_binary.html)) 
 
-## 
+Clone this repository : git clone https://github.com/alvissalim/WG_NASAGIBSExplorer.git
+
+Open the project from XCode. 
 
 ## License
 
